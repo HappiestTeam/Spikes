@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E0237BEF-2ABD-44AE-9232-05DC4C9C706E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aquiles.Cassandra10</RootNamespace>
+    <AssemblyName>Aquiles.Cassandra10</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Thrift, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Thrift.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Apache\Cassandra\AuthenticationException.cs" />
+    <Compile Include="Apache\Cassandra\AuthenticationRequest.cs" />
+    <Compile Include="Apache\Cassandra\AuthorizationException.cs" />
+    <Compile Include="Apache\Cassandra\Cassandra.cs" />
+    <Compile Include="Apache\Cassandra\CfDef.cs" />
+    <Compile Include="Apache\Cassandra\Column.cs" />
+    <Compile Include="Apache\Cassandra\ColumnDef.cs" />
+    <Compile Include="Apache\Cassandra\ColumnOrSuperColumn.cs" />
+    <Compile Include="Apache\Cassandra\ColumnParent.cs" />
+    <Compile Include="Apache\Cassandra\ColumnPath.cs" />
+    <Compile Include="Apache\Cassandra\Compression.cs" />
+    <Compile Include="Apache\Cassandra\ConsistencyLevel.cs" />
+    <Compile Include="Apache\Cassandra\Constants.cs" />
+    <Compile Include="Apache\Cassandra\CounterColumn.cs" />
+    <Compile Include="Apache\Cassandra\CounterSuperColumn.cs" />
+    <Compile Include="Apache\Cassandra\CqlMetadata.cs" />
+    <Compile Include="Apache\Cassandra\CqlResult.cs" />
+    <Compile Include="Apache\Cassandra\CqlResultType.cs" />
+    <Compile Include="Apache\Cassandra\CqlRow.cs" />
+    <Compile Include="Apache\Cassandra\Deletion.cs" />
+    <Compile Include="Apache\Cassandra\IndexClause.cs" />
+    <Compile Include="Apache\Cassandra\IndexExpression.cs" />
+    <Compile Include="Apache\Cassandra\IndexOperator.cs" />
+    <Compile Include="Apache\Cassandra\IndexType.cs" />
+    <Compile Include="Apache\Cassandra\InvalidRequestException.cs" />
+    <Compile Include="Apache\Cassandra\KeyCount.cs" />
+    <Compile Include="Apache\Cassandra\KeyRange.cs" />
+    <Compile Include="Apache\Cassandra\KeySlice.cs" />
+    <Compile Include="Apache\Cassandra\KsDef.cs" />
+    <Compile Include="Apache\Cassandra\Mutation.cs" />
+    <Compile Include="Apache\Cassandra\NotFoundException.cs" />
+    <Compile Include="Apache\Cassandra\SchemaDisagreementException.cs" />
+    <Compile Include="Apache\Cassandra\SlicePredicate.cs" />
+    <Compile Include="Apache\Cassandra\SliceRange.cs" />
+    <Compile Include="Apache\Cassandra\SuperColumn.cs" />
+    <Compile Include="Apache\Cassandra\TimedOutException.cs" />
+    <Compile Include="Apache\Cassandra\TokenRange.cs" />
+    <Compile Include="Apache\Cassandra\UnavailableException.cs" />
+    <Compile Include="AquilesHelper.cs" />
+    <Compile Include="Client\DefaultClient.cs" />
+    <Compile Include="CommandDelegates.cs" />
+    <Compile Include="Configuration\AquilesClusterBuilder.cs" />
+    <Compile Include="Connection\Factory\BufferedTransportConnectionFactory.cs" />
+    <Compile Include="Connection\Factory\DefaultTransportConnectionFactory.cs" />
+    <Compile Include="Connection\Factory\FramedTransportConnectionFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aquiles.Core\Aquiles.Core.csproj">
+      <Project>{E96D658F-A28D-4CAC-A414-7328CF12052F}</Project>
+      <Name>Aquiles.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E96D658F-A28D-4CAC-A414-7328CF12052F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aquiles.Core</RootNamespace>
+    <AssemblyName>Aquiles.Core</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AquilesHelper.cs" />
+    <Compile Include="Client\ConnectionConfig.cs" />
+    <Compile Include="Cluster\Factory\DefaultClusterFactory.cs" />
+    <Compile Include="Client\AbstractClient.cs" />
+    <Compile Include="Configuration\AquilesConfigurationException.cs" />
+    <Compile Include="Configuration\AquilesConfigurationSection.cs" />
+    <Compile Include="Configuration\AquilesTextElement.cs" />
+    <Compile Include="Configuration\CassandraClusterCollection.cs" />
+    <Compile Include="Configuration\CassandraClusterElement.cs" />
+    <Compile Include="Configuration\CassandraEndpointCollection.cs" />
+    <Compile Include="Configuration\CassandraEndpointElement.cs" />
+    <Compile Include="Configuration\AbstractAquilesClusterBuilder.cs" />
+    <Compile Include="Configuration\ConnectionElement.cs" />
+    <Compile Include="Configuration\EndpointManagerElement.cs" />
+    <Compile Include="Configuration\SpecialConnectionParameterCollection.cs" />
+    <Compile Include="Configuration\SpecialConnectionParameterElement.cs" />
+    <Compile Include="Connection\EndpointManager\Factory\RoundRobinEndpointManagerFactory.cs" />
+    <Compile Include="Connection\EndpointManager\IEndpointManager.cs" />
+    <Compile Include="Connection\EndpointManager\Impl\RoundRobinEndpointManager.cs" />
+    <Compile Include="Connection\Factory\IClientFactory.cs" />
+    <Compile Include="Connection\Pooling\Factory\NoClientPoolFactory.cs" />
+    <Compile Include="Connection\Pooling\Factory\SizeControlledClientPoolFactory.cs" />
+    <Compile Include="Connection\Pooling\IConnectionPool.cs" />
+    <Compile Include="Connection\Pooling\Impl\NoClientPool.cs" />
+    <Compile Include="Connection\Pooling\Impl\SizeControlledClientPool.cs" />
+    <Compile Include="Diagnostics\ILogger.cs" />
+    <Compile Include="Diagnostics\Impl\TraceLogger.cs" />
+    <Compile Include="Diagnostics\Logger.cs" />
+    <Compile Include="Exceptions\AquilesException.cs" />
+    <Compile Include="Exceptions\ExecutionBlockException.cs" />
+    <Compile Include="Helpers\DateTimePrecise.cs" />
+    <Compile Include="Helpers\Encoders\ASCIIEncoderHelper.cs" />
+    <Compile Include="Helpers\Encoders\BigEndianLongEncoderHelper.cs" />
+    <Compile Include="Helpers\Encoders\ByteEncoderHelper.cs" />
+    <Compile Include="Helpers\Encoders\BigEndianInt32EncoderHelper.cs" />
+    <Compile Include="Helpers\Encoders\LittleEndianInt32EncoderHelper.cs" />
+    <Compile Include="Helpers\Encoders\Int32EncoderHelper.cs" />
+    <Compile Include="Helpers\Encoders\GUIDEncoderHelper.cs" />
+    <Compile Include="Helpers\Encoders\IByteEncoderHelper.cs" />
+    <Compile Include="Helpers\Encoders\LittleEndianLongEncoderHelper.cs" />
+    <Compile Include="Helpers\Encoders\LongEncoderHelper.cs" />
+    <Compile Include="Helpers\Encoders\UTF8EncoderHelper.cs" />
+    <Compile Include="Helpers\Encoders\UUIDEncoderHelper.cs" />
+    <Compile Include="Helpers\GuidGenerator.cs" />
+    <Compile Include="Helpers\UnixHelper.cs" />
+    <Compile Include="IFactory.cs" />
+    <Compile Include="Model\AbstractEndpoint.cs" />
+    <Compile Include="Client\IClient.cs" />
+    <Compile Include="Cluster\ICluster.cs" />
+    <Compile Include="Model\IEndpoint.cs" />
+    <Compile Include="Cluster\Impl\DefaultCluster.cs" />
+    <Compile Include="Model\Impl\DefaultEndpoint.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>IF EXIST ..\..\..\Lib GOTO EXISTSLIB
+mkdir ..\..\..\Lib
+:EXISTSLIB
+copy *.* ..\..\..\Lib</PostBuildEvent>
+  </PropertyGroup>
+</Project>
